@@ -2450,9 +2450,9 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        const char* pszTimestamp = "http://www.coindesk.com/bitcoin-scaling-give-everyone-control/";
+        const char* pszTimestamp = "Tincoin Project restart 07/01/2018";
         CTransaction txNew;
-        txNew.nTime = 1497476511;
+        txNew.nTime = 1515243600;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2462,7 +2462,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
-        block.nTime    = 1497476511;
+        block.nTime    = 1515243600;
         block.nVersion = 1;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
 		block.nNonce   = 41660;
@@ -2470,7 +2470,7 @@ bool LoadBlockIndex(bool fAllowNew)
         {
             block.nNonce   = 13278;
         }
-        if (false && (block.GetHash() != hashGenesisBlock)) {
+        if (true && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
